@@ -9,7 +9,7 @@ const create = async(req, res, next) => {
     const useCaseCreate = UseCaseCreate();
     useCaseCreate.Execute(products).then( (result) => {
     res.status(200).json({
-            ok: false,
+            ok: true,
             message: result.message,
             data: result.data,
             total: result.totalToPay
@@ -25,7 +25,7 @@ const getAll = async(req, res, next) => {
     const useCaseGetAll = UseCaseGetAll();
     useCaseGetAll.Execute().then( (result) => {
     res.status(200).json({
-            ok: false,
+            ok: true,
             message: result.message,
             data: result.data,
     });

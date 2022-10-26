@@ -9,7 +9,7 @@ const create = async(req, res, next) => {
     useCaseCreate.Execute(email, password).then( (result) => {
 
     res.status(200).json({
-            ok: false,
+            ok: true,
             message: result.message,
             data: result.data
     });
@@ -24,7 +24,7 @@ const login = async(req, res, next) => {
     const useCaseLogin = UseCaseLogin();
     useCaseLogin.Execute(email, password).then( (result) => {
         res.status(200).json({
-                ok: false,
+                ok: true,
                 message: result.message,
                 data: result.data,
                 token: result.token
