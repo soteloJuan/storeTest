@@ -10,12 +10,10 @@ module.exports = () => ({
         const receiptsRepository = new ReceiptsRepository();
         const productSoldRepository = new ProductSoldRepository();
 
-        const findAllProducts = await receiptsRepository.getAllReceipt();
+        const findAllReceipts = await receiptsRepository.getAllReceipt();
         const newArray = [];
-
-        for (const index in findAllProducts) {
-
-            const objectTemp = findAllProducts[index].dataValues;
+        for (const index in findAllReceipts) {
+            const objectTemp = findAllReceipts[index].dataValues;
             const resultAllProductSold = await productSoldRepository.getAllByIdReceipt(objectTemp.idReceipt);
 
             objectTemp.ProductsSold = resultAllProductSold

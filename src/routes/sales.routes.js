@@ -6,7 +6,7 @@ const jwtUser = ValidationJWT();
 
 const router = Router();
 
-router.post('/createSale', create);
+router.post('/createSale', jwtUser.validationJwtUser,create);
 router.get('/getAllSale', getAll);
 
 
